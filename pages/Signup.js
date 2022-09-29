@@ -57,7 +57,7 @@ const RegisterUser = async (firstName, lastName, email, password) => {
                     secureTextEntry= {true} />
                 </View>
                 <TouchableOpacity
-                onPress={() => {RegisterUser(firstName, lastName, email, password)}}
+                onPress={() => {RegisterUser(firstName, lastName, email, password), navigation.navigate('Login')}}
                 style={styles.button} >
                     <Text style={{fontWeight: 'bold', fontSize: 22, backgroundColor: '#004ed0'}}>Signup</Text>
                 </TouchableOpacity>
