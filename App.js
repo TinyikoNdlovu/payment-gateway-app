@@ -1,20 +1,49 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import React, { useState, useEffect } from "react";
 
-export default function App() {
+
+import Signup from './pages/Signup';
+
+import Header from './components/Header';
+
+const Stack = createStackNavigator();
+
+const App = () => {
+
+  const [user, setUser] = useState();
+
+  if (!user) {
+    return (
+      <Stack.Navigator>
+        
+        <Stack.Screen name="Signup"
+        component={Signup}
+        options={{
+          headerTitle: () => <Header name="Bug Ninza" />,
+          headerStyle: {
+            height:150,
+            borderBottomLeftRadius: 50,
+            borderBottomRightRadius: 50,
+            backgroundColor: '#00e4d0',
+            shadowColor: '#000',
+            elevation: 25
+          }
+        }} />
+       
+          </Stack.Navigator>
+    );
+  }
+
+}
+export default () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <NavigationContainer>
+      <App />
+    </NavigationContainer>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+
