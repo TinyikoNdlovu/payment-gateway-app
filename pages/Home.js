@@ -5,7 +5,7 @@ import { authentication } from "../components/firebaseConfig";
 
 // import firestore from '@react-native-firebase/firestore';
 
-const Dashboard = ({signOut}) => {
+const Home = ({signOut}) => {
 
     const navigation = useNavigation()
     const [name, setName] = useState('')
@@ -39,7 +39,7 @@ const Dashboard = ({signOut}) => {
   );
 }
 
-export default Dashboard
+export default Home
 
 const styles = StyleSheet.create({
     image: {
